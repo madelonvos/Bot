@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 
 bot.on('message', async message => {
     if(message.content.startsWith(process.env.PREFIX)){
-        let args = message.content.slice(config.prefix.length).split(/ +/);
+        let args = message.content.slice(process.env.PREFIX.length).split(/ +/);
         let cmd = args.shift().toLowerCase()
         if(['credits', 'credit', 'madeby', 'owner'].includes(cmd)){
             return message.channel.send(embed('This bot was made by **KokoNeot#9150**\nIf you\'re looking for a bot feel free to contact me or check out [my fiverr gigs](https://www.fiverr.com/share/plGPwZ)'))
